@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form.form-horizontal(role='form', method='POST')
+    .form-group
+      label.col-sm-2.control-label(for='firstname') 用户名
+      .col-sm-10
+        input.form-control(type='text', name='username', placeholder='输入用户名')
+    .form-group
+      label.col-sm-2.control-label(for='firstname') 密码
+      .col-sm-10
+        input.form-control(type='password', name='password', placeholder='输入密码')
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        input.btn.btn-default(type='submit', value='登录')

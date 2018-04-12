@@ -1,0 +1,36 @@
+nav.navbar.navbar-inverse(role="navigation")
+  .container
+    .container-fluid
+      .navbar-header
+        a.navbar-brand(href="/") YPBlog
+      a.navbar-brand(href="/") 首页
+      ul.nav.navbar-nav.navbar-right
+        -if(user)
+          li
+            a(title='发表文章',href='/post') 发表文章
+          li
+            a(href='/logout')
+              span.glyphicon.glyphicon-log-out 
+              |登出
+        -else
+          li
+            a(href='/reg') 
+              span.glyphicon.glyphicon-user
+              |注册
+          li
+            a(href='/login') 
+              span.glyphicon.glyphicon-log-in
+              |登录
+.container.col-sm-12
+  div
+    -if(success)
+      =success
+    -else
+      =error
+    h3=title
+    .userArea
+      -if(user)
+        span 用户:#{user.username}
+      -else
+        span 用户：游客
+  hr

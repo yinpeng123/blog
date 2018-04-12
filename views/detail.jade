@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  -if(user)
+    -if(user.username==article.author)
+      p
+        span: a.edit(href='/edit?id=#{article._id}') 编辑
+        span: a.edit(href='/delete?id=#{article._id}') 删除
+  p
+    h2
+      a(href='#') #{article.title}
+  p.info
+    |作者: #{article.author}
+    || 日期: #{article.publishTime}
+    ||  浏览: #{article.pv}
+  p #{article.content}
+  img(src='#{img}')

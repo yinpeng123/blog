@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  p #{time}
+  form
+    .input-group
+      input.form-control(type='text', placeholder='SEARCH', name='keyword')
+      span.input-group-btn
+        input.btn.btn-default(type='submit', value='搜索') 
+               
+  ul.list-group
+    each article in articles 
+      li.list-group-item
+        h3: a(href='/detail?id=#{article._id}') #{article.title}
+        p.info
+          span 作者：#{article.author}
+          span |
+          span 日期：#{article.publishTime}
+      hr
